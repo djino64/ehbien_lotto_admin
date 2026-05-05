@@ -1,0 +1,44 @@
+# ehbien_lotto_admin/analysis_options.yaml
+
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - custom_lint
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore
+  language:
+    strict-casts:       true
+    strict-inference:   true
+    strict-raw-types:   true
+
+linter:
+  rules:
+    # ── Style ───────────────────────────────────────────────
+    prefer_single_quotes:               true
+    always_use_package_imports:         true
+    directives_ordering:                true
+    sort_pub_dependencies:              false
+
+    # ── Sécurité ────────────────────────────────────────────
+    avoid_dynamic_calls:                true
+    avoid_print:                        true
+    avoid_returning_null_for_future:    true
+    cancel_subscriptions:               true
+    close_sinks:                        true
+
+    # ── Riverpod ────────────────────────────────────────────
+    # (géré par riverpod_lint via custom_lint)
+
+    # ── Qualité ─────────────────────────────────────────────
+    prefer_const_constructors:          true
+    prefer_const_declarations:          true
+    prefer_final_fields:                true
+    prefer_final_locals:                true
+    unnecessary_lambdas:                true
+    use_super_parameters:               true
+    sized_box_for_whitespace:           true
+    avoid_unnecessary_containers:       true

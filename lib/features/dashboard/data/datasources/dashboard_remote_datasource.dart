@@ -19,9 +19,9 @@ class DashboardRemoteDatasourceImpl implements DashboardRemoteDatasource {
   @override
   Future<DashboardStatsEntity> getStats() async {
     try {
-      final now  = DateTime.now();
+      final now = DateTime.now();
       final from = AppDateUtils.startOfDay(now);
-      final to   = AppDateUtils.endOfDay(now);
+      final to = AppDateUtils.endOfDay(now);
 
       // Tickets du jour
       final ticketsSnap = await _firestore
@@ -35,11 +35,9 @@ class DashboardRemoteDatasourceImpl implements DashboardRemoteDatasource {
 
       for (final doc in ticketsSnap.docs) {
         final d = doc.data();
-        totalVentesJour +=
-            (d['montantTotal'] as num?)?.toDouble() ?? 0.0;
+        totalVentesJour += (d['montantTotal'] as num?)?.toDouble() ?? 0.0;
         if (d['gagnant'] == true && d['paye'] != true) {
-          totalGainsAPayer +=
-              (d['gainTotal'] as num?)?.toDouble() ?? 0.0;
+          totalGainsAPayer += (d['gainTotal'] as num?)?.toDouble() ?? 0.0;
         }
       }
 
@@ -87,13 +85,13 @@ class DashboardRemoteDatasourceImpl implements DashboardRemoteDatasource {
       }
 
       return DashboardStatsEntity(
-        totalVentesJour:     totalVentesJour,
-        totalTicketsJour:    ticketsSnap.docs.length,
-        totalAgentsActifs:   agentsSnap.count ?? 0,
-        totalGainsAPayer:    totalGainsAPayer,
-        totalRecettes:       totalVentesJour - totalGainsAPayer,
-        totalVentesSemaine:  totalVentesSemaine,
-        totalVentesMois:     totalVentesMois,
+        totalVentesJour: totalVentesJour,
+        totalTicketsJour: ticketsSnap.docs.length,
+        totalAgentsActifs: agentsSnap.count ?? 0,
+        totalGainsAPayer: totalGainsAPayer,
+        totalRecettes: totalVentesJour - totalGainsAPayer,
+        totalVentesSemaine: totalVentesSemaine,
+        totalVentesMois: totalVentesMois,
         totalTiragesOuverts: tiragesSnap.count ?? 0,
       );
     } on FirebaseException catch (e) {

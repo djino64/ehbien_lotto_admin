@@ -1,18 +1,18 @@
 ﻿// lib/features/dashboard/presentation/pages/dashboard_page.dart
 
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:ehbien_lotto_admin/features/dashboard/presentation/providers/dashboard_provider.dart';
+import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/recent_tickets_table.dart';
+import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/sales_chart.dart';
+import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/stats_row.dart';
+import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/succursale_overview_card.dart';
+import 'package:ehbien_lotto_admin/features/tirages/presentation/providers/tirages_provider.dart';
 import 'package:ehbien_lotto_admin/shared/routing/route_names.dart';
 import 'package:ehbien_lotto_admin/shared/theme/app_colors.dart';
 import 'package:ehbien_lotto_admin/shared/theme/app_spacing.dart';
 import 'package:ehbien_lotto_admin/shared/widgets/feedback/error_state.dart';
-import 'package:ehbien_lotto_admin/features/dashboard/presentation/providers/dashboard_provider.dart';
-import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/stats_row.dart';
-import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/sales_chart.dart';
-import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/recent_tickets_table.dart';
-import 'package:ehbien_lotto_admin/features/dashboard/presentation/widgets/succursale_overview_card.dart';
-import 'package:ehbien_lotto_admin/features/tirages/presentation/providers/tirages_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class DashboardPage extends ConsumerStatefulWidget {
   const DashboardPage({super.key});
@@ -204,6 +204,7 @@ class _TiragesOuvertsCard extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: AppColors.warning.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -277,6 +278,7 @@ class _TirageListTile extends StatelessWidget {
         width: 36,
         height: 36,
         decoration: BoxDecoration(
+          // ignore: deprecated_member_use
           color: AppColors.success.withOpacity(0.1),
           borderRadius: BorderRadius.circular(8),
         ),
@@ -287,6 +289,7 @@ class _TirageListTile extends StatelessWidget {
         ),
       ),
       title: Text(
+        // ignore: avoid_dynamic_calls
         tirage.nom as String,
         style: const TextStyle(
           fontSize: 13,
@@ -294,6 +297,7 @@ class _TirageListTile extends StatelessWidget {
         ),
       ),
       subtitle: Text(
+        // ignore: avoid_dynamic_calls
         _formatTime(tirage.heurePrevu as DateTime),
         style: TextStyle(
           fontSize: 11,
@@ -303,6 +307,7 @@ class _TirageListTile extends StatelessWidget {
       trailing: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
         decoration: BoxDecoration(
+          // ignore: deprecated_member_use
           color: AppColors.success.withOpacity(0.1),
           borderRadius: BorderRadius.circular(12),
         ),

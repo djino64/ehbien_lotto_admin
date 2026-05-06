@@ -1,8 +1,5 @@
 ﻿// lib/features/agents/presentation/pages/agent_form_page.dart
 
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ehbien_lotto_admin/core/utils/validators.dart';
 import 'package:ehbien_lotto_admin/features/agents/domain/entities/agent_entity.dart';
 import 'package:ehbien_lotto_admin/features/agents/presentation/providers/agents_provider.dart';
@@ -11,6 +8,9 @@ import 'package:ehbien_lotto_admin/shared/routing/route_names.dart';
 import 'package:ehbien_lotto_admin/shared/theme/app_colors.dart';
 import 'package:ehbien_lotto_admin/shared/theme/app_spacing.dart';
 import 'package:ehbien_lotto_admin/shared/widgets/feedback/loading_overlay.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class AgentFormPage extends ConsumerStatefulWidget {
   final String? agentId;
@@ -344,6 +344,7 @@ class _FormHeader extends StatelessWidget {
         Container(
           padding:    const EdgeInsets.all(10),
           decoration: BoxDecoration(
+            // ignore: deprecated_member_use
             color:        AppColors.primary.withOpacity(0.1),
             borderRadius: BorderRadius.circular(10),
           ),
@@ -490,9 +491,11 @@ class _ErrorBanner extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.sm + 4),
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color:        AppColors.danger.withOpacity(0.08),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
+          // ignore: deprecated_member_use
           color: AppColors.danger.withOpacity(0.3),
         ),
       ),

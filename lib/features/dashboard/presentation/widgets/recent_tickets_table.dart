@@ -30,6 +30,7 @@ class RecentTicketsTable extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: AppColors.info.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -227,6 +228,7 @@ class _StatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color:        color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
       ),

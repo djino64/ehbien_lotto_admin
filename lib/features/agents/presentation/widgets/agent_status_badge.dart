@@ -28,8 +28,10 @@ class AgentStatusBadge extends StatelessWidget {
         vertical:   large ? 6  : 3,
       ),
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color:        color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(20),
+        // ignore: deprecated_member_use
         border:       Border.all(color: color.withOpacity(0.3)),
       ),
       child: Row(

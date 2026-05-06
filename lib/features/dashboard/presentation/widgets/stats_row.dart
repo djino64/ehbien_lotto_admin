@@ -156,6 +156,7 @@ class _ShimmerBoxState extends State<_ShimmerBox>
       animation: _animation,
       builder: (_, __) => Container(
         decoration: BoxDecoration(
+          // ignore: deprecated_member_use
           color: Colors.grey.withOpacity(_animation.value),
           borderRadius:
               BorderRadius.circular(AppSpacing.cardRadius),

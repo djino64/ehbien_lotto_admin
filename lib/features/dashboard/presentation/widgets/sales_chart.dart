@@ -1,11 +1,11 @@
 // lib/features/dashboard/presentation/widgets/sales_chart.dart
 
+import 'package:ehbien_lotto_admin/features/rapports/presentation/providers/rapports_provider.dart';
+import 'package:ehbien_lotto_admin/shared/theme/app_colors.dart';
+import 'package:ehbien_lotto_admin/shared/theme/app_spacing.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ehbien_lotto_admin/shared/theme/app_colors.dart';
-import 'package:ehbien_lotto_admin/shared/theme/app_spacing.dart';
-import 'package:ehbien_lotto_admin/features/rapports/presentation/providers/rapports_provider.dart';
 
 class SalesChart extends ConsumerStatefulWidget {
   const SalesChart({super.key});
@@ -34,6 +34,7 @@ class _SalesChartState extends ConsumerState<SalesChart> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: AppColors.primary.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),

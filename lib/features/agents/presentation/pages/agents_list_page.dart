@@ -177,8 +177,10 @@ class _StatChip extends StatelessWidget {
         vertical:   AppSpacing.sm,
       ),
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color:        color.withOpacity(0.08),
         borderRadius: BorderRadius.circular(10),
+        // ignore: deprecated_member_use
         border:       Border.all(color: color.withOpacity(0.2)),
       ),
       child: Row(
@@ -200,6 +202,7 @@ class _StatChip extends StatelessWidget {
                 label,
                 style: TextStyle(
                   fontSize: 10,
+                  // ignore: deprecated_member_use
                   color:    color.withOpacity(0.7),
                 ),
               ),

@@ -85,6 +85,7 @@ class AgentCard extends ConsumerWidget {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
+                  // ignore: deprecated_member_use
                   color:        AppColors.warning.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -216,8 +217,10 @@ class _AgentAvatar extends StatelessWidget {
       width:  44,
       height: 44,
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color:        _color.withOpacity(0.15),
         borderRadius: BorderRadius.circular(12),
+        // ignore: deprecated_member_use
         border:       Border.all(color: _color.withOpacity(0.3)),
       ),
       child: Center(
